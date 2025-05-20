@@ -2,6 +2,22 @@
 Esse app permite que o usuário crie notas temporárias.
 Como  sugere o nome, as notassão efêmeras, desaparecendo sempre que a página é recarregada.
 
+## Como rodar a aplicação (no Linux):
+
+```
+$ git clone https://github.com/diogooabreu/ephemeral_notes.git
+$ cd ephemeral_notes
+```
+## Para instalar as dependências:
+```
+$ yarn
+```
+## Para abrir na web
+
+```
+$ yarn start --web
+```
+
 ### Tela princiapl do aplicativo, onde as notas criadas são exibidas em:
 ![image](https://github.com/user-attachments/assets/4607d179-c08d-46d1-a13b-afceb7da8bb6)
 
