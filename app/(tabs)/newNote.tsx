@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import { View, TextInput,StyleSheet} from "react-native";
-import { useRouter } from "expo-router";
+import { useRouter, useFocusEffect } from "expo-router";
 import Btn from "@/components/Btn";
 import { notes } from "@/database/notes";
 import ScreenContainer from "@/components/ScreenContainer";
@@ -10,6 +10,13 @@ export default function NewNote() {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
 
+  useFocusEffect(
+    useCallback(() => {
+      setTitle("");
+      setContent("");
+    }, [])
+  );
+
   const handleSave = () => {
     notes.push({
       id: Math.random().toString(),
@@ -17,10 +24,7 @@ export default function NewNote() {
       content,
     });
 
-    setTitle('');
-    setContent('');
-
-    router.replace("/");
+    router.push("/");
   };
 
   return (
